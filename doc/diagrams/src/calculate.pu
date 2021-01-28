@@ -1,0 +1,9 @@
+@startuml
+
+actor cli
+
+participant api
+participant cvss
+participant calculate
+
+@enduml
