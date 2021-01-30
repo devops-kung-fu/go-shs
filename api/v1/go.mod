@@ -1,4 +1,4 @@
-module v1
+module github.com/devops-kung-fu/go-shs/api/v1
 
 go 1.15
 
