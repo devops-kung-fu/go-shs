@@ -1,4 +1,4 @@
-module github.com/devops-kung-fu/go-shs/api/uno
+module github.com/devops-kung-fu/go-shs/calculate
 
 go 1.15
 
