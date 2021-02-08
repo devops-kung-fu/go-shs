@@ -3,6 +3,7 @@ on:
   push:
     tags:
       - 'v*'
+      - 'calculate/v*'
 jobs:
   build:
     name: Create Release

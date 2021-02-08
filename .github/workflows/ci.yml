@@ -22,17 +22,17 @@ jobs:
 
       - name: Build
         run: |
-          cd api/v1
+          cd calculate
           go build
 
       - name: Vet & Lint
         run: |
-          cd api/v1
+          cd calculate
           go vet
           golint
 
       - name: Test
         run: |
-          cd api/v1
+          cd calculate
           go test -v -coverprofile=coverage.out
           go tool cover -func=coverage.out
