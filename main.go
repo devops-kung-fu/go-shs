@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/devops-kung-fu/go-shs/calculate"
+	"github.com/devops-kung-fu/go-shs/api"
 )
 
 func main() {

@@ -1,7 +1,8 @@
 module github.com/devops-kung-fu/go-shs
 
-go 1.15
+go 1.16
 
-replace github.com/devops-kung-fu/go-shs/calculate => ./calculate
-
-require github.com/devops-kung-fu/go-shs/calculate v0.1.2
+require (
+	github.com/spiegel-im-spiegel/go-cvss v0.4.0
+	github.com/stretchr/testify v1.7.0
+)
