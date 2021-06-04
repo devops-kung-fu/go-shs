@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/devops-kung-fu/go-shs/calculate"
 	"fmt"
+	"github.com/devops-kung-fu/go-shs/api"
 )
 
 func main() {
