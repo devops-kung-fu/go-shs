@@ -2,6 +2,9 @@
   hooks:
     - type: pre-commit
       actions:
+        - name: "Git Pull (Ensure there are no upstream changes that are not local)"
+          exec: git
+          args: ["pull"]
         - name: "Update all go dependencies to latest"
           exec: go
           args: ["get", "-u", "./..."]

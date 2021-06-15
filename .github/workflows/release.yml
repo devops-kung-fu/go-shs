@@ -21,6 +21,6 @@ jobs:
           release_name: Release ${{ github.ref }}
           body: |
             This release has the following changes:
-            - Release flow.
+            - CVSS Score and Severity Calculations
           draft: false
           prerelease: false
