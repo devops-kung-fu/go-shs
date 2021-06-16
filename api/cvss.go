@@ -167,3 +167,15 @@ func QualitativeSeverity(score float64) string {
 		return "Critical"
 	}
 }
+
+// GetCVSSScore - Calculates CVSS scores and severities
+func GetCVSSScore(cvss string) CVSSScore {
+	cvssScore := CVSSScore{}
+	cvssScore.BaseScore = BaseScore(cvss)
+	cvssScore.BaseSeverity = QualitativeSeverity(cvssScore.BaseScore)
+	cvssScore.TemporalScore = TemporalScore(cvss, cvssScore.BaseScore)
+	cvssScore.TemporalSeverity = QualitativeSeverity(cvssScore.TemporalScore)
+	cvssScore.EnvironmentalScore = EnvironmentalScore(cvss)
+	cvssScore.EnvironmentalSeverity = QualitativeSeverity(cvssScore.EnvironmentalScore)
+	return cvssScore
+}

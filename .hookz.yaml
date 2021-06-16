@@ -23,8 +23,6 @@
         - name: "cyclone-dx: Generate a Software Bill of Materials (SBoM)"
           exec: cyclonedx-gomod
           args: ["-json", "-output", "sbom.json", "-std", "-licenses"]
-    - type: pre-push
-      actions:
         - name: "Go Build (Ensure pulled modules do not break the build)"
           exec: go
           args: ["build", "-v"]

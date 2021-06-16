@@ -52,3 +52,18 @@ func TestQualitativeSeverity(t *testing.T) {
 		})
 	}
 }
+
+func TestGetCVSSScore(t *testing.T) {
+	want := CVSSScore{
+		BaseScore: 5.5,
+		BaseSeverity: "Medium",
+		TemporalScore: 5,
+		TemporalSeverity: "Medium",
+		EnvironmentalScore: 6.1,
+		EnvironmentalSeverity: "Medium",
+	}
+	result := GetCVSSScore("CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L/E:F/RL:W/RC:R/CR:M/IR:H/AR:L/MAV:A/MAC:L/MPR:H/MUI:N/MS:C/MC:L/MI:L/MA:H")
+	if result != want {
+		t.Error()
+	}
+}
