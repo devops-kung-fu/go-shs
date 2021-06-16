@@ -34,12 +34,12 @@ type Severity struct {
 	Max    float64 `json:"max"`
 }
 
-// CVSSScore - 
+// CVSSScore - CVSS Score and Severities
 type CVSSScore struct {
-	BaseScore float64 `json:"basescore"`
-	BaseSeverity string `json:"baseseverity"`
-	TemporalScore float64 `json:"temporalscore"`
-	TemporalSeverity string `json:"temporalseverity"`
-	EnvironmentalScore float64 `json:"environmentalscore"`
-	EnvironmentalSeverity string `json:"environmentalseverity"`
+	BaseScore 				float64 `json:"basescore"`
+	BaseSeverity 			string 	`json:"baseseverity"`
+	TemporalScore 			float64 `json:"temporalscore"`
+	TemporalSeverity 		string 	`json:"temporalseverity"`
+	EnvironmentalScore 		float64 `json:"environmentalscore"`
+	EnvironmentalSeverity 	string 	`json:"environmentalseverity"`
 }

@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.2",
-  "serialNumber": "urn:uuid:ff6b1060-279a-496f-927f-0ee92bf6496a",
+  "serialNumber": "urn:uuid:54294dea-eb93-46d4-9977-697cd6ea0b66",
   "version": 1,
   "metadata": {
-    "timestamp": "2021-06-16T10:27:33-04:00",
+    "timestamp": "2021-06-16T10:30:11-04:00",
     "tools": [
       {
         "vendor": "CycloneDX",
@@ -31,11 +31,11 @@
       }
     ],
     "component": {
-      "bom-ref": "pkg:golang/github.com/devops-kung-fu/go-shs@v0.0.0-20210616100546-c64e75191058",
+      "bom-ref": "pkg:golang/github.com/devops-kung-fu/go-shs@v0.0.0-20210616102727-6a96912a1ca8",
       "type": "application",
       "name": "github.com/devops-kung-fu/go-shs",
-      "version": "v0.0.0-20210616100546-c64e75191058",
-      "purl": "pkg:golang/github.com/devops-kung-fu/go-shs@v0.0.0-20210616100546-c64e75191058",
+      "version": "v0.0.0-20210616102727-6a96912a1ca8",
+      "purl": "pkg:golang/github.com/devops-kung-fu/go-shs@v0.0.0-20210616102727-6a96912a1ca8",
       "externalReferences": [
         {
           "url": "https://github.com/devops-kung-fu/go-shs",
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "ref": "pkg:golang/github.com/devops-kung-fu/go-shs@v0.0.0-20210616100546-c64e75191058",
+      "ref": "pkg:golang/github.com/devops-kung-fu/go-shs@v0.0.0-20210616102727-6a96912a1ca8",
       "dependsOn": [
         "pkg:golang/github.com/spiegel-im-spiegel/go-cvss@v0.4.0",
         "pkg:golang/std@1.16.2"
