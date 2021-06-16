@@ -1,23 +1,23 @@
 package api
 
-//Cve Represents a Common Vulnerability and Exposure entry
+// Cve Represents a Common Vulnerability and Exposure entry
 type Cve struct {
 	ID     string `json:"id"`
 	Vector string `json:"vector"`
 }
 
-//Config Configuration for the SHS calculator
+// Config Configuration for the SHS calculator
 type Config struct {
 	Weights Weights `json:"weights"`
 }
 
-//Weights Contains values to either amplify or reduce severity scores
+// Weights Contains values to either amplify or reduce severity scores
 type Weights struct {
 	Severity   Severity   `json:"severity"`
 	Compliance Compliance `json:"compliance"`
 }
 
-//Compliance Weights for different compliance types
+// Compliance Weights for different compliance types
 type Compliance struct {
 	Hipaa   float64 `json:"HIPAA"`
 	PCI     float64 `json:"PCI"`
@@ -26,10 +26,20 @@ type Compliance struct {
 	Fedramp float64 `json:"Fedramp"`
 }
 
-//Severity Weights for severity levels
+// Severity Weights for severity levels
 type Severity struct {
 	Low    float64 `json:"low"`
 	Medium float64 `json:"medium"`
 	High   float64 `json:"high"`
 	Max    float64 `json:"max"`
+}
+
+// CVSSScore - CVSS Score and Severities
+type CVSSScore struct {
+	BaseScore 				float64 `json:"basescore"`
+	BaseSeverity 			string 	`json:"baseseverity"`
+	TemporalScore 			float64 `json:"temporalscore"`
+	TemporalSeverity 		string 	`json:"temporalseverity"`
+	EnvironmentalScore 		float64 `json:"environmentalscore"`
+	EnvironmentalSeverity 	string 	`json:"environmentalseverity"`
 }
