@@ -73,7 +73,7 @@ func getMetricValue(key string) float64 {
 
 // BaseScore - 
 func BaseScore(cvss string) float64 {
-	metricSections := regexp.MustCompile(`[A-Z]{1,2}:[A-Z]{1,2}`).FindAllString(cvss, -1)
+	metricSections := regexp.MustCompile(`(AV|AC|PR|UI|S|C|I|A):[A-Z]{1,2}`).FindAllString(cvss, -1)
 	s := metricSections[4]
 	av := getMetricValue(metricSections[0])
 	ac := getMetricValue(metricSections[1])
@@ -107,7 +107,7 @@ func BaseScore(cvss string) float64 {
 
 // TemporalScore - 
 func TemporalScore(cvss string, baseScore float64) float64 {
-	metricSections := regexp.MustCompile(`[A-Z]{1,2}:[A-Z]{1,2}`).FindAllString(cvss, -1)
+	metricSections := regexp.MustCompile(`(E|RL|RC):[A-Z]{1,2}`).FindAllString(cvss, -1)
 	e := getMetricValue(metricSections[0])
 	rl := getMetricValue(metricSections[1])
 	rc := getMetricValue(metricSections[2])
@@ -115,8 +115,8 @@ func TemporalScore(cvss string, baseScore float64) float64 {
 }
 
 // EnvironmentalScore -
-func EnvironmentalScore(environmentalVector string, temporalVector string) float64 {
-	environmentalMetricSections := regexp.MustCompile(`[A-Z]{1,2}:[A-Z]{1,2}`).FindAllString(environmentalVector, -1)
+func EnvironmentalScore(cvss string) float64 {
+	environmentalMetricSections := regexp.MustCompile(`(CR|IR|AR|MAV|MAC|MPR|MUI|MS|MC|MI|MA):[A-Z]{1,3}`).FindAllString(cvss, -1)
 	cr := getMetricValue(environmentalMetricSections[0])
 	ir := getMetricValue(environmentalMetricSections[1])
 	ar := getMetricValue(environmentalMetricSections[2])
@@ -128,7 +128,7 @@ func EnvironmentalScore(environmentalVector string, temporalVector string) float
 	mc := getMetricValue(environmentalMetricSections[8])
 	mi := getMetricValue(environmentalMetricSections[9])
 	ma := getMetricValue(environmentalMetricSections[10])
-	temporalMetricSections := regexp.MustCompile(`[A-Z]{1,2}:[A-Z]{1,2}`).FindAllString(temporalVector, -1)
+	temporalMetricSections := regexp.MustCompile(`(E|RL|RC):[A-Z]{1,2}`).FindAllString(cvss, -1)
 	e := getMetricValue(temporalMetricSections[0])
 	rl := getMetricValue(temporalMetricSections[1])
 	rc := getMetricValue(temporalMetricSections[2])
